@@ -11,6 +11,8 @@ import {
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
+  @Input() width = 540;
+  @Input() height = 415;
   @Input() imageUrls: string[];
   @Input() autoPlay = false;
   @Input() autoPlayInterval = 3000;
@@ -23,8 +25,8 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
     this.galleryOptions = [
       {
-        width: '540px',
-        height: '415px',
+        width: `${this.width}px`,
+        height: `${this.height}px`,
         thumbnails: false,
         imageAnimation: NgxGalleryAnimation.Slide,
         imageAutoPlay: this.autoPlay,

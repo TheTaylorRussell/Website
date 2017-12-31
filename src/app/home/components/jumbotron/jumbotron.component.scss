@@ -1,0 +1,25 @@
+.about-me {
+  margin-top: 100px;
+  padding: 35px 0;
+
+  p {
+    margin: 35px auto;
+    width: 50%;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    color: #4a4a4a;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about-me p {
+    width: 85%;
+  }
+}
+
+.name {
+  margin: 5px 0;
+  font-weight: 800;
+  font-size: 2em;
+  letter-spacing: -1px;
+}

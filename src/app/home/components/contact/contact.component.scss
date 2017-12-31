@@ -1,0 +1,65 @@
+#contact .inner-container {
+  padding: 0 25%;
+}
+
+@media (min-width: 300px) {
+  #contact .inner-container {
+    padding: 0;
+  }
+}
+
+.c-list {
+  padding: 0;
+  list-style: none;
+}
+
+.c-list .c-list__item {
+  margin-bottom: 1vh;
+  color: #555;
+}
+
+.c-list--segmented .c-list__item:hover {
+  opacity: 1;
+  background: #dedede;
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+.c-list--segmented .c-list__item {
+  margin-bottom: 2vh;
+  padding: 1.25rem;
+  cursor: pointer;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  -webkit-transition: all 0.24s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.24s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: auto;
+  text-rendering: auto;
+}
+
+.c-list--segmented .c-list__item a {
+  display: block;
+  text-decoration: none;
+  color: #555;
+}
+
+@media (min-width: 680px) {
+  .c-list--segmented .c-list__item {
+    opacity: 0.8;
+  }
+}
+
+.c-list--segmented .c-list__item h4 {
+  margin-bottom: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.c-list--segmented .c-list__item p {
+  margin-bottom: 0;
+}

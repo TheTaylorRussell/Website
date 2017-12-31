@@ -13,4 +13,6 @@ jobs:
           key: my-project-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
-            
+      - run: xvfb-run -a npm run ng build --prod --base-href "https://thetaylorrussell.github.io/Website/
+      - run: xvfb-run -a angular-cli-ghpages
+      

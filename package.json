@@ -7,7 +7,7 @@
     "start": "ng serve --aot",
     "build": "ng build --prod",
     "build:josh": "ng build --prod --base-href /russellvisuals2/",
-    "ghpages:deploy": "angular-cli-ghpages --no-silent",
+    "ghpages:deploy": "angular-cli-ghpages --no-silent --repo=https://${GH_TOKEN}@github.com/TheTaylorRussell/Website.git --name=\"TheTaylorRussell\" --email=the.taylor.russell@gmail.com",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

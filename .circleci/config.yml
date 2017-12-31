@@ -6,15 +6,23 @@ jobs:
       - image: circleci/node:6-browsers
     steps:
       - checkout
-      - restore_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package.json" }}
       - run: sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
       - run: npm install -g angular-cli-ghpages
+      - run: npm install -g @angular/cli
+      - restore_cache:
+          key: my-project-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
           key: my-project-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
+      - deploy:
+          name: "Deploy to GitHub Pages"
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ng build --prod --base-href "https://thetaylorrussell.github.io/Website/"
+              ngh --no-silent --repo=https://${GH_TOKEN}@github.com/TheTaylorRussell/Website.git --name="thetaylorrussell" --email=barrellrolla@yahoo.com
+            fi
       - run: xvfb-run -a npm run ng build --prod --base-href /Website/
-      - run: ngh --no-silent --repo=https://${GH_TOKEN}@github.com/TheTaylorRussell/Website.git --name="thetaylorrussell" --email=barrellrolla@yahoo.com
+      - run: 
       

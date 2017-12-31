@@ -23,6 +23,5 @@ jobs:
               ng build --prod --base-href "https://thetaylorrussell.github.io/Website/"
               ngh --no-silent --repo=https://${GH_TOKEN}@github.com/TheTaylorRussell/Website.git --name="thetaylorrussell" --email=barrellrolla@yahoo.com
             fi
-      - run: xvfb-run -a npm run ng build --prod --base-href /Website/
-      - run: 
+        
       

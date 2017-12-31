@@ -8,6 +8,7 @@ jobs:
       - checkout
       - restore_cache:
           key: my-project-{{ .Branch }}-{{ checksum "package.json" }}
+      - run: npm install -g angular-cli-ghpages
       - run: npm install
       - save_cache:
           key: my-project-{{ .Branch }}-{{ checksum "package.json" }}
@@ -15,4 +16,5 @@ jobs:
             - "node_modules"
       - run: xvfb-run -a npm run ng build --prod --base-href "https://thetaylorrussell.github.io/Website/"
       - run: xvfb-run -a npm run ghpages:deploy
+      - run: ngh --repo=https://${GH_TOKEN}@github.com/TheTaylorRussell/Website.git --name="thetaylorrussell" --email=barrellrolla@yahoo.com
       

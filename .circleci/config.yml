@@ -20,8 +20,7 @@ jobs:
           name: "Deploy to GitHub Pages"
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ng build --prod --base-href "https://thetaylorrussell.github.io/Website/"
+              ng build --prod --base-href "https://thetaylorrussell.github.io/"
               ngh --no-silent --repo=https://${GH_TOKEN}@github.com/TheTaylorRussell/Website.git --name="thetaylorrussell" --email=barrellrolla@yahoo.com
             fi
-        
-      
+
